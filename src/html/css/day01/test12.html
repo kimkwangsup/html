@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>입력 태그 속성</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .fr {
+            width: 600px;
+            margin: 0px auto;
+            text-align: center;
+        }
+        [type="submit"] {
+            border: none;
+            height: 30px;
+            width: 100%;
+            background-color: chartreuse;
+        }
+        input[type="text"], [type="password"]:enabled {
+            height: 20px;
+            width: 200px;
+            font-size: 14pt;
+            padding: 10px;
+        }
+        input:disabled {
+            height: 25px;
+            width: 200px;
+            font-size: 14pt;
+            padding: 10px;
+            background-color: mediumaquamarine;
+        }
+        input {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 30px;
+        }
+        .d1 {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+            text-align: center;
+        }
+        .d2 {
+            display: inline-block;
+            width: 90px;
+            height: 20px;
+        }
+        input:checked {
+            width: 30px;
+            height: 30px;
+        }
+        label.ttl {
+            display: inline-block;
+            width: 200px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .fr > div {
+            text-align: left;
+        }
+        .d3 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid deeppink;
+            margin-top: 10px;
+        }
+        .d3:hover {
+            width: 100px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .d3:active {
+            width: 300px;
+            height: 50px;
+            background-color: red;
+        }
+        .dfr {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="fr" method="get" action="result.html">
+        <div>
+            <label for="id" class="ttl">ID : </label>
+            <input type="text" name="id" id="id" value="jennie" readonly>
+        </div>
+        <div>
+            <label for="pw" class="ttl">PW : </label>
+            <input type="password" name="pw" id="pw" value="12345" disabled>
+        </div>
+        <div>
+            <label for="mail" class="ttl">MAIL : </label>
+            <input type="text" name="mail" id="mail">
+        </div>
+        <div>
+            <label for="gen" class="ttl">성별 : </label>
+            <div class="d1">
+                <div class="d2">
+                    <input type="radio" name="gen" value="F" id="F">
+                    <label for="F">여자</label>
+                </div>
+                <div class="d2">
+                    <input type="radio" name="gen" value="M" id="M">
+                    <label for="M">남자</label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="dfr">
+                <div class="d3"></div>
+            </div>
+        </div>
+        
+        <div>
+            <button type="submit">제출</button>
+        </div>
+        <div style="background-color: pink; width: 10px; height: 5px;"><p> </p></div>
+    </form>
+</body>
+</html>
