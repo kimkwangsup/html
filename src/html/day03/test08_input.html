@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Tag</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form method="post" action="result.html" style="text-align: center;">
+        <div style="display: inline-block; width: 600px;">
+            <h1 style="background-color: rgb(0, 255, 0); color: yellow; padding: 10px;">Input Tag</h1>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">아이디 : </h2>
+                <input type ="text" name="id" required placeholder="아이디를 입력하세요."
+                                style="width: 250px; height: 30px; border: 1px solid blue; padding-left: 10px;">
+            </div>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">비밀번호 : </h2>
+                <input type="password" name="pw" required placeholder="비밀번호를 입력하세요."
+                                style="width: 250px; height: 30px; border: 1px solid blue; padding-left: 10px;">
+            </div>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">이메일 : </h2>
+                <input type="text" name="mail" required placeholder="이메일을 입력하세요." style="width: 250px; height: 30px; border: 1px solid blue; padding-left: 10px;">
+            </div>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">전화번호 : </h2>
+                <input type="text" name="tel" required placeholder="전화번호를 입력하세요." style="width: 250px; height: 30px; border: 1px solid blue; padding-left: 10px;">
+            </div>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">성별 : </h2>
+                <div style="display: inline-block; width: 140px; height: 35px; text-align: center;">
+                    <input type="radio" name="gen" id="F" value="F">
+                    <label for="F">
+                        <h2 style="display: inline-block; width: 100px; color: red;">여자</h2>
+                    </label>
+                </div>
+                <div style="display: inline-block; width: 140px; height: 35px; text-align: center;">
+                    <input type="radio" name="gen" id="M" value="M">
+                    <label for="M">
+                        <h2 style="display: inline-block; width: 100px; color: red;">남자</h2>
+                    </label>
+                </div>
+                <!-- <br>
+                    <input type="radio" name="loc"> 수원
+                    <input type="radio" name="loc"> 서울
+                    <input type="radio" name="loc"> 일산
+                    <input type="radio" name="loc"> 부평
+                -->
+                <div>
+                    <div>
+                    <h2 style="display: inline-block; text-align: right; width: 120px; color: red; margin-bottom: 0px;">선호과목 : </h2>
+                    <div style="display: inline-block; width: 280px;"><p> </p></div>
+                    </div>
+                    <div style="display: inline-block; text-align: right; width: 120px;"></div>
+                    <ul style="list-style-type: none; width: 250px; display: inline-block; text-align: left; margin-top: 0px;">
+                        <li><input type="checkbox" name="fab" value="java">JAVA</li>
+                        <li><input type="checkbox" name="fab" value="oracle">ORACLE</li>
+                        <li><input type="checkbox" name="fab" value="html">HTML</li>
+                        <li><input type="checkbox" name="fab" value="python">PYTHON</li>
+                        <li><input type="checkbox" name="fab" value="r">R</li>
+                        <li><input type="checkbox" name="fab" value="spring">SPRING</li>
+                    </ul>
+                </div>
+            <div>
+                <h2 style="display: inline-block; text-align: right; width: 120px; color: red;">현재과목 : </h2>
+                <select name="sub" style="width: 280px; height: 30px; border: 1px solid blue; padding-left: 10px;">
+                    <option selected>선택</option>
+                    <option value="java">자바</option>
+                    <option value="db">오라클</option>
+                    <option value="html">웹</option>
+                    <option value="spring">스프링</option>
+                    <option value="python">파이썬</option>
+                    <option value="r">R</option>
+                </select>
+            </div>
+            <div style="text-align: left;">
+                <h2 style="float: left; position: relative; left: 95px; text-align: right; width: 120px; color: red;">기타 : </h2>
+                <textarea name="etc" required placeholder="기타사항을 입력하세요." rows="10" cols="37" 
+                    style="clear: left; position: relative; left: 100px; top: 25px; display: inline-block; border: 1px solid blue; resize: none;" ></textarea>
+            </div>
+            </div>
+            <div style="margin-top: 35px;">
+                <input type="reset" value="RESET" style="width: 50%; height: 35px; float: left; background-color: orange; border: none; cursor: pointer;">
+                <input type="submit" value="SUBMIT" style="width: 50%; height: 35px; float: left; background-color: blueviolet; border: none; cursor: pointer;">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
