@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        var date = new Date();
+        var yea = date.getFullYear();
+        var mon = date.getMonth();
+        var dat = date.getDate();
+        var yoil = date.getDay();
+        var hou = date.getHours();
+        var min = date.getMinutes();
+        var sec = date.getSeconds();
+        var msec = date.getMilliseconds();
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">년도 : '+ yea + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">월 : '+ mon + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">일 : '+ dat + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">요일 : '+ yoil + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">시 : '+ hou + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">분 : '+ min + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">초 : '+ sec + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">1/1000초 : '+ msec + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">날짜 : '+ date.toLocaleString() + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">date.toUTCString : '+ date.toUTCString() + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">date.toISOString : '+ date.toISOString() + '</h3>');
+        document.write('<h3 class="w3-center w3-padding w3-card-4 w3-pale-blue">date.getTimezoneOffset : '+ date.getTimezoneOffset() + '</h3>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

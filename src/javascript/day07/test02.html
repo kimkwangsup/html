@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+</head>
+<body>
+    <div class="w3-content mxw650" id="fr"></div>
+        <div class="w3-col w3-margin-top w3-padding w3-center">
+            <div class="w3-button w3-red w3-padding w3-card-4 w3-round-large" id="btn1">시작</div>
+            <div class="w3-button w3-red w3-padding w3-card-4 w3-round-large" id="btn2">종료</div>
+            <div class="w3-button w3-red w3-padding w3-card-4 w3-round-large" id="btn3">넌뭐야</div>
+        </div>
+    
+    <script type="text/javascript">
+        
+        function setTdata(){
+            document.getElementById('fr').innerHTML = '<h1 class="w3-pale-red w3-padding w3-round-large w3-card-4 w3-center">' + new Date().toTimeString() + '</h1>';
+        }
+
+        // var stime = setInterval(setTdata, 1000);
+
+        var st = null;
+
+        document.getElementById('btn1').onclick = function(){
+            st = setTimeout(setTdata, 1000);
+        };
+
+        document.getElementById('btn2').onclick = function(){
+            clearInterval(stime);
+        };
+        
+        document.getElementById('btn3').onclick = function(){
+            clearTimeout(st);
+        };
+    </script>
+</body>
+</html>

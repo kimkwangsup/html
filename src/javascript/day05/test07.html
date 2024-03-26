@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        
+       
+    </script>
+</head>
+<body>
+    <form method="get" action="result.html" class="w3-content w3-center mxw700" name="frm" id="frm">
+        <h1 class="w3-red w3-padding w3-round-large w3-card-4">Login</h1>
+        <div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
+            <div class="w3-col w3-padding ">
+                <label for="id" class="w3-col m3 w3-right-align w3-text-pink lbl">ID : </label>
+                <input type="text" class="w3-col m7 w3-input w3-border" name="id" id="id" placeholder="아이디를 입력하세요." >
+            </div>
+            <div class="w3-padding">
+                <label for="pw" class="w3-col m3 w3-right-align w3-text-pink lbl">PW : </label>
+                <input type="password" class="w3-col m7 w3-input w3-border" name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
+                <div class="w3-col">
+                    <p id="msg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col w3-margin-top w3-card w3-round-large frHidden">
+            <div class="w3-button w3-pink w3-half w3-hover-aqua" id="rbtn">초기화</div>
+            <div class="w3-button w3-green w3-half w3-hover-yellow" id="lbtn">로그인</div>
+        </div>
+    </form>    
+    <script type="text/javascript">
+        document.getElementById('lbtn').onclick = function(){
+            // 데이터 유효성 검사
+            // 아이디 태그 검사
+            var sid = document.frm.id.value;
+
+            if(!sid){
+                // !sid : 변수가 조건식에 기술된 경우 그 변수가 null 또는 undefined 이면 false가 된다.
+                // 따라서 !sid 의 의미는 sid 변수에 데이터가 null 이거나 undefined 상태이면 이 블럭을 실행하세요.
+                // 라는 의미가 된다.
+                // 아이디 태그에 입력이 안되어있는 경우 이 부분을 실행하세요.
+                // 먼저 아이디 입력태그에 focus 를 이동하고
+                document.frm.id.focus();
+                // 메세지 출력하고
+                alert('아이디를 입력하세요.');
+                // 실행중인 이 함수는 더이상 실행할 의미가 없으므로 즉시종료시킨다.
+                return;
+            }
+            // 비밀번호 검사
+            var spw = document.frm.pw.value;
+            if(!spw){
+                document.frm.pw.focus();
+                alert('비밀번호를 입력하세요.');
+                return;
+            }
+            
+            // 1. 폼 전송
+            // document.frm.submit();
+            
+            // 2. location 객체를 이용해서 전달 GET 방식
+            location.href = 'result.html?id=' + sid + '&pw=' + spw + '&team=pirates';
+
+            
+        };
+    </script>
+</body>
+</html>

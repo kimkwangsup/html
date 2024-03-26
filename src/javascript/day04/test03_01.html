@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>재귀함수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        /*
+            재귀호출함수 : 함수 내에서 자기 사진을 다시 호출하는  함수
+                          주로 특정 숫자까지 합, 곱을 구할때 많이 사용되는 함수.
+        */
+
+        // 0 ~ n 까지의 합을 반환해주는 함수
+
+        // 0 ~ n 까지의 곱을 반환해주는 함수
+        function getHap(n){
+            // 주의 ]
+            //   재귀호출함수는 종료 조건을 반드시 기술해줘야한다.
+            // 종료조건
+            if(n == 0){
+                return 0;
+            }
+
+            return n + getHap(n - 1);
+        }
+        function getGop(n){
+            if(n == 1){
+                return 1;
+            }
+            return n * getGop(n - 1);
+        }
+        document.write('<div class="w3-content mxw650 w3-padding w3-center">');
+        document.write('    <h1 class="w3-red w3-padding w3-card-4 w3-round-large">1 부터 10까지의 합 : ' + getHap(9642) + '</h1>');
+        document.write('    <h1 class="w3-aqua w3-padding w3-card-4 w3-round-large">1 부터 10까지의 곱 : ' + getGop(10) + '</h1>');
+        document.write('</div>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

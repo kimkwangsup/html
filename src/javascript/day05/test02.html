@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        /*
+        function func1(){
+            document.getElementById('rbtn').onclick = function(){
+                // document.frm.id.value = '';
+                // document.frm.pw.value = '';
+                document.frm.reset();
+                document.getElementById('msg').innerHTML = '';
+                document.getElementById('msg').removeAttribute('class');
+            }
+        };
+        */
+       $(document).ready(function(){
+            // rbtn 태그 이벤트
+            $('#rbtn').click(function(){
+                $('#id, #pw').val('');
+            });
+            $('#lbtn').click(function(){
+                $('#frm').attr('method', 'GET');
+                $('#frm').attr('action', 'test01.html');
+                $('#frm').submit();
+            });
+       });
+       
+    </script>
+</head>
+<body>
+    <form class="w3-content w3-center mxw700" name="frm" id="frm">
+        <h1 class="w3-red w3-padding w3-round-large w3-card-4">Login</h1>
+        <div class="w3-container w3-padding w3-margin-top w3-round-large w3-card-4 pdh30">
+            <div class="w3-col w3-padding ">
+                <label for="id" class="w3-col m3 w3-right-align w3-text-pink lbl">ID : </label>
+                <input type="text" class="w3-col m7 w3-input w3-border" name="id" id="id" placeholder="아이디를 입력하세요." >
+            </div>
+            <div class="w3-padding">
+                <label for="pw" class="w3-col m3 w3-right-align w3-text-pink lbl">PW : </label>
+                <input type="password" class="w3-col m7 w3-input w3-border" name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
+                <div class="w3-col">
+                    <p id="msg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col w3-margin-top w3-card w3-round-large frHidden">
+            <div class="w3-button w3-pink w3-half w3-hover-aqua" id="rbtn">초기화</div>
+            <div class="w3-button w3-green w3-half w3-hover-yellow" id="lbtn">로그인</div>
+        </div>
+    </form>    
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

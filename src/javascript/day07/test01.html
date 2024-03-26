@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+</head>
+<body>
+    <h1>The select element</h1>
+    <p>The select element is used to create a drop-down list.</p>
+    <form action="" name="frm">
+        <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+  	            <option default>cars</option>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+             </select>
+     <br><br>
+            <input type="button" value="Submit" id="sbtn">
+    </form>
+    <div class="w3-col" id="fr">
+
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('sbtn').onclick = function(){
+            document.frm.submit();
+        };
+        document.getElementById("cars").onchange = function(){
+            var idx = document.frm.cars.selectedIndex;
+            
+            var data = document.frm.cars[idx].value;
+            
+            document.getElementById('fr').innerHTML += '<h2 class="inblock w3-red btnW1">'+ data + '</h2>';
+         
+        };
+
+</script>
+</body>
+</html>

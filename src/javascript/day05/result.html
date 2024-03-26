@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../../css/user.css">
+<script type="text/javascript">
+    var txt = location.href;
+    var data = location.search.substring(1);
+    /*
+    alert(data.indexOf('&'));
+    document.write('<h4 class="w3-center">href : ' + txt + '</h4>');
+    document.write('<h4 class="w3-center">host : ' + location.host + '</h4>');
+    document.write('<h4 class="w3-center">hostname : ' + location.hostname + '</h4>');
+    document.write('<h4 class="w3-center">search : ' + location.search.substring(1) + '</h4>');
+    document.write('<h4 class="w3-center">protocol : ' + location.protocol + '</h4>');
+    document.write('<h4 class="w3-center">pathname : ' + location.pathname + '</h4>');
+    document.write('<h4 class="w3-center">port : ' + location.port + '</h4>');
+    */
+</script>
+</head>
+<body>
+    <div class="w3-content mxw650">
+        <h1 class="w3-blue w3-center w3-padding w3-card-4">파라미터 꺼내기</h1>
+        <div class="w3-col w3-padding w3-card-4" style="background-color: #eff8fc;" id="fr">
+            <div class="w3-col">
+                <h3 class="w3-col m4 w3-right-align pdr10" id="lbl1"></h3>
+                <h3 class="w3-col m7 w3-center" id="id"></h3>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var tmp = data;
+        
+        function getTag(k, v){
+            var s = '<div class="w3-col">';
+            s += '<h3 class="w3-col m4 w3-right-align pdr10">' + k + ' : </h3>';
+            s += '    <h3 class="w3-col m7 w3-center">' + v + '</h3>';
+            s += '</div>';
+
+            return s;
+        }
+        
+        // 1. 반복문으로 처리하는 방법
+
+        var temp = tmp;
+        var arr = [];
+        var i = 0;
+        while(true){
+            if(temp.indexOf('&') != -1){
+                var idx = temp.indexOf('&');
+                var txt = temp.substring(0, idx);
+                arr[i++] = txt;
+                temp = temp.substring(idx + 1);
+            } else {
+                var txt = temp;
+                arr[i++] = txt;
+                break;
+            }
+        }
+
+        // alert(arr);
+        /*
+            id=jennie
+            pw=12345
+            team=blackPink
+            mail=jennie@human.com
+            tel=010-1212-1212
+
+            '=' 를 기준으로 문자열을 분리해서 배열에 담아서 채워준다.
+
+        */
+        /*
+        for(var i = 0 ; i < arr.length ; i++ ){
+            var d = arr[i];
+            var j = d.indexOf('=');
+            var k = d.substring(0, j);
+            var v = d.substring(j + 1);
+
+            arr[i] = [k, v];
+        }
+
+        for(var i = 0 ; i < arr.length ; i++ ){
+            document.write('<h5 class="w3-half w3-center">' + arr[i][0] + '</h5>');
+            document.write('<h5 class="w3-half w3-center">' + arr[i][1] + '</h5>');
+        }
+        */
+
+        // 연관배열
+        var darr = {};
+        var keys = [];
+        for(var i  = 0; i < arr.length ; i++ ){
+            // 'id=jennie' ==> 'id', 'jennie'
+            var str = arr[i];
+            var indx = str.indexOf('=');
+            var k = str.substring(0, indx);
+            var v = str.substring(indx + 1);
+            keys[i] = k;
+            darr[k] = v;
+        }
+
+        for(var i = 0 ; i < keys.length ; i++ ){
+            document.write('<h5 class="w3-half w3-center">' + keys[i] + '</h5>');
+            document.write('<h5 class="w3-half w3-center">' + darr[keys[i]] + '</h5>');
+        }
+
+        /*
+        var tag = '';
+        while(tmp.indexOf('&') != -1){
+            var idx = tmp.indexOf('&');
+            var key = tmp.substring(0, tmp.indexOf('='));
+            var value = tmp.substring(tmp.indexOf('=') + 1, tmp.indexOf('&'));
+            tag += getTag(key, value);
+            tmp = tmp.substring(tmp.indexOf('&') + 1);
+        }
+
+        var key = tmp.substring(0, tmp.indexOf('='));
+        var value = tmp.substring(tmp.indexOf('=') + 1);
+        tag += getTag(key, value);
+
+        document.getElementById('fr').innerHTML += tag;
+        */
+        /*
+        while(tmp.indexOf('=') != -1){
+            var idx1 = 0;
+            var pre = tmp;
+            if(tmp.indexOf('&') != -1){
+                idx1 = tmp.indexOf('&');
+                pre = tmp.substring(0, idx1);
+                tmp = tmp.substring(idx1 + 1);
+            }
+            
+            var idx2 = pre.indexOf('=');
+            var key = pre.substring(0, idx2);
+            var value = pre.substring(idx2 + 1);
+
+            var tag = getTag(key, value);
+            
+            document.getElementById('fr').innerHTML += tag;
+        }
+        */
+
+        /*
+        // 2. split()를 이용해서 처리하는 방법
+        var arr = data.split('&');
+        var tag = '';
+        for(var i = 0 ; i < arr.length ; i++ ){
+            tag += getTag(arr[i].substring(0, arr[i].indexOf('=')), 
+                            arr[i].substring(arr[i].indexOf('=') + 1));
+            
+            // var idx = arr[i].indexOf('=');
+            // var key = arr[i].substring(0, idx);
+            // var value = arr[i].substring(idx + 1);
+
+            // tag += getTag(key, value);
+        }
+
+        document.getElementById('fr').innerHTML = tag;
+        */
+    </script>
+</body>
+</html>

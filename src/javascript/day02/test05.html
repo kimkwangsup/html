@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript">
+        // 키보드로 입력받는 함수
+        //      [windows.]prompt(메세지);
+        if(confirm('데이터를 입력할까요?')){
+            var name1 = prompt('이름 : ');
+            var kor = prompt('국어 : ');
+            var eng = prompt('영어 : ');
+        };
+    </script>
+</head>
+<body>
+    <div class="w3-content w3-center mxw650">
+        <h1 class="w3-teal w3-card-4 w3-round-large w3-padding" id="s1"></h1>
+        <h1 class="w3-teal w3-card-4 w3-round-large w3-padding" id="s2"></h1>
+        <h1 class="w3-teal w3-card-4 w3-round-large w3-padding">영어 : <span id="s3"></span></h1>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('s1').innerHTML = '이름 : <span>' + name1 + '</span>';
+        document.getElementById('s2').innerText = '국어 : <span>' + kor + '</span>';
+        document.getElementById('s3').innerHTML = eng;
+    </script>
+</body>
+</html>

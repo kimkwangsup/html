@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        var jennie = {
+            name : '김제니',
+            age : 28,
+            mail: 'jennie@human.com',
+            tel: '010-1212-1212',
+            sing: function(){
+                document.write('<div class="w3-center">');
+                    document.write('<h1 class="w3-pale-blue w3-padding w3-card-4">휘파람 - 이문세</h1>');
+                document.write('<p>그대여 나의 어린애</p>');
+                document.write('<p>그대는 휘파람 휘이이</p>');
+                document.write('<p>불며 떠나가 버렸네</p>');
+                document.write('<p>그대여 나의 장미여</p>');
+                document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/O71zRU_sj4k?si=z3LyP6y2Q7kfgPgI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+                document.write('</div>');
+            }
+        };
+        var jisoo = new Object();
+        jisoo.name = '지수';
+        jisoo.age = 29;
+        jisoo.mail = 'jisoo@human.com';
+        jisoo.tel = '010-2929-2929'
+        jisoo.sing = function(){
+            document.write('<div class="w3-center">');
+            document.write('<h1 class="w3-pale-blue w3-padding w3-card-4">휘파람 - 이문세</h1>');
+            
+            document.write('<p>사랑하는 그대</p>');
+            document.write('<p>내 곁을 떠나갈 적에</p>');
+            document.write('<p>그래도 섭섭했었나</p>');
+            document.write('<p>나를 보며 눈물 흘리다</p>');
+            document.write('<p>두 손 잡고 고개</p>');
+            document.write('<p>끄떡여 달라하기에</p>');
+            document.write('<p>그렇게 하기 싫어서 나도 울었네</p>');
+            document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/JG2DqTNr4uA?si=NG3flgOe84Kr0_8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+            document.write('</div>');
+        };
+        
+        document.write('<h1 class="w3-pale-red w3-center w3-padding w3-card-4 w3-round-large">이름 : ' + jennie.name + '</h1>');
+        document.write('<h1 class="w3-pale-green w3-center w3-padding w3-card-4 w3-round-large">나이 : ' + jennie['age'] + '</h1>');
+        document.write('<h1 class="w3-pale-blue w3-center w3-padding w3-card-4 w3-round-large">메일 : ' + jennie['mail'] + '</h1>');
+        document.write('<h1 class="w3-pale-yellow w3-center w3-padding w3-card-4 w3-round-large">전화 : ' + jennie.tel + '</h1>');
+        document.write('<h1 class="w3-light-gray w3-center w3-padding w3-card-4 w3-round-large">노래</h1>');
+        jennie.sing();
+
+
+        document.write('<h1 class="w3-pale-red w3-center w3-padding w3-card-4 w3-round-large">이름 : ' + jisoo.name + '</h1>');
+        document.write('<h1 class="w3-pale-green w3-center w3-padding w3-card-4 w3-round-large">나이 : ' + jisoo['age'] + '</h1>');
+        document.write('<h1 class="w3-pale-blue w3-center w3-padding w3-card-4 w3-round-large">메일 : ' + jisoo['mail'] + '</h1>');
+        document.write('<h1 class="w3-pale-yellow w3-center w3-padding w3-card-4 w3-round-large">전화 : ' + jisoo.tel + '</h1>');
+        document.write('<h1 class="w3-light-gray w3-center w3-padding w3-card-4 w3-round-large">노래</h1>');
+        jisoo.sing();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

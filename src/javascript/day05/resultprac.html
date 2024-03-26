@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        function abc(){
+            var txt = location.href;
+            var data = location.search.substring(1);
+            var idx = data.indexOf('&');
+            var sid = data.substring(0,idx);
+            
+            var ididx = sid.indexOf('=');
+            var id = sid.substring(0,ididx);
+            var name = sid.substring(ididx+1);
+            
+            var data1 = data.substring(idx+1);
+            var idx1 = data1.indexOf('&');
+            var spw = data1.substring(0,idx1);
+
+            var pwidx = spw.indexOf('=');
+            var pw = spw.substring(0,pwidx);
+            var password = spw.substring(pwidx+1);
+
+            var idx2 = data.lastIndexOf('&');
+            var steam = data.substring(idx2+1);
+
+            var tidx = steam.indexOf('=');
+            var team = steam.substring(0,tidx);
+            var tname = steam.substring(tidx+1);
+            var arr = [
+                [id, name],
+                [pw, password],
+                [team, tname]
+            ];
+            for(var i = 0 ; i < arr.length ; i++){
+                document.write('<h1 class="w3-content w3-purple">' + arr[i][0] +':'+ arr[i][1] + '</h1>')
+            }
+            
+        
+        
+            document.write('<h4 class="w3-center">href : ' + txt + '</h4>');
+            document.write('<h4 class="w3-center">host : ' + location.host + '</h4>');
+            document.write('<h4 class="w3-center">hostname : ' + location.hostname + '</h4>');
+            document.write('<h4 class="w3-center">search : ' + location.search.substring(1) + '</h4>');
+            document.write('<h4 class="w3-center">protocol : ' + location.protocol + '</h4>');
+            document.write('<h4 class="w3-center">port : ' + location.port + '</h4>');
+            document.write('<h4 class="w3-center">pathname : ' + location.pathname + '</h4>');
+            
+            // document.write('<h1 class="w3-content w3-red">id : ' + arr.id + '</h1>');
+            // document.write('<h1 class="w3-content w3-red">pw : ' + arr.pw + '</h1>');
+            // document.write('<h1 class="w3-content w3-red">team : ' + arr.team + '</h1>');
+            var adata = data.split('&');
+            for(var i = 0 ; i < adata.length ; i++){
+                var idx = adata[i].indexOf('=');
+                var name = adata[i].substring(0,idx);
+                var value = adata[i].substring(idx+1);
+                document.write('<h1 class="w3-content w3-blue">' + name + ' - ' + value + '</h1>');
+            }
+        }
+
+        abc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

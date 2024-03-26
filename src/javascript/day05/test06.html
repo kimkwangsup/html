@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        function Bio(weight, name, money){
+            this.weight = weight;
+            this.name = name;
+            this.money = money;
+            this.why = function(){
+                return '선생님이 사주신댔어요.'
+            };
+        }
+        var candy1 = new Bio(99, '복숭아맛', 1000);
+        function abc(){
+            return 20;
+        }
+        candy1.qt = abc;
+
+        document.write('<h5>캔디이름 : ' + candy1.name + '</h5>');
+        document.write('<h5>캔디무게 : ' + candy1['weight'] + '</h5>');
+        document.write('<h5>캔디가격 : ' + candy1.money + '</h5>');
+        document.write('<h5>구입사유 : ' + candy1.why() + '</h5>');
+        document.write('<h5>구입개수 : ' + candy1.qt() + '</h5>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

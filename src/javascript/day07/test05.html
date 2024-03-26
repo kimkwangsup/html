@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../../../css/user.css">
+<script type="text/javascript" src="../../../js/colorClass.js"></script>
+<script type="text/javascript">
+    var member = [
+        {
+            'name': 'jennie',
+            'age': '28',
+            'mail': 'jennie@human.com',
+            'tel': '010-1212-1212'
+        },
+        {
+            'name': 'lisa',
+            'age': '26',
+            'mail': 'lisa@human.com',
+            'tel': '010-2424-2424'
+        },
+        {
+            'name': 'rose',
+            'age': '27',
+            'mail': 'rose@human.com',
+            'tel': '010-5757-5757'
+        },
+        {
+            'name': 'jisoo',
+            'age': '29',
+            'mail': 'jisoo@human.com',
+            'tel': '010-2626-2626'
+        }
+    ];
+
+    function showInfo(index) {
+        var infoDivs = document.getElementsByClassName('info');
+        for (var i = 0; i < infoDivs.length; i++) {
+            infoDivs[i].style.display = 'none';
+        }
+        var infoDiv = document.getElementById('info_' + index);
+        infoDiv.style.display = 'block';
+    }
+</script>
+</head>
+<body>
+    <div class="w3-content mxw650 w3-center">
+        <h1 class="w3-pink w3-padding w3-card-4">Black Pink</h1>
+        <div class="w3-container w3-card-4 w3-padding" id="fr"></div>
+    </div>
+    <script type="text/javascript">
+        var names = [];
+        var ages = [];
+        var mails = [];
+        var tels = [];
+
+        for(var i = 0 ; i < member.length ; i++ ){
+            names[i] = member[i].name;
+            ages[i] = member[i].age;
+            mails[i] = member[i].mail;
+            tels[i] = member[i].tel;
+        }
+        
+        var el = document.createElement('div');
+        el.setAttribute('class', 'w3-col w3-margin-top');
+        el.setAttribute('id', 'bfr');
+
+        for(var i = 0 ; i < names.length ; i++ ){
+            var in_el = document.createElement('button');
+            in_el.setAttribute('class', 'w3-quarter w3-button ' + colorList[i]);
+            in_el.setAttribute('id', 'button_' + i);
+            in_el.setAttribute('onclick', 'showInfo(' + i + ')');
+            in_el.innerHTML = names[i];
+
+            el.appendChild(in_el);
+        }
+        document.getElementsByClassName('mxw650')[0].appendChild(el);
+        
+        for(var i = 0 ; i < names.length ; i++ ){
+            var info_div = document.createElement('div');
+            info_div.setAttribute('class', 'info');
+            info_div.setAttribute('id', 'info_' + i);
+            info_div.style.display = 'none';
+            
+            var age_el = document.createElement('div');
+            age_el.setAttribute('class', 'w3-col ' + colorList[i]);
+            age_el.innerHTML = 'Age: ' + ages[i];
+            info_div.appendChild(age_el);
+            
+            var mail_el = document.createElement('div');
+            mail_el.setAttribute('class', 'w3-col ' + colorList[i]);
+            mail_el.innerHTML = 'Mail: ' + mails[i];
+            info_div.appendChild(mail_el);
+            
+            var tel_el = document.createElement('div');
+            tel_el.setAttribute('class', 'w3-col ' + colorList[i]);
+            tel_el.innerHTML = 'Tel: ' + tels[i];
+            info_div.appendChild(tel_el);
+
+            document.getElementsByClassName('mxw650')[0].appendChild(info_div);
+        }
+    </script>
+</body>
+</html>

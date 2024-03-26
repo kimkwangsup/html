@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변수</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript">
+        var jennie = {
+            '이름': '김제니',
+            '나이': 28,
+            '메일': 'jennie@human.com',
+            '전화': '010-1212-1212'
+        };
+        document.write('<div class="w3-content mxw650 w3-padding w3-center">');
+        document.write('    <h1 class="w3-pale-red w3-padding w3-card-4 w3-round-large">Jennie</h1>');
+        document.write('    <h3 class="w3-pale-blue w3-padding w3-card-4 w3-round-large">이름 : ' + jennie['이름'] + '</h3>');
+        document.write('    <h3 class="w3-pale-green w3-padding w3-card-4 w3-round-large">이름 : ' + jennie['나이'] + '</h3>');
+        document.write('    <h3 class="w3-green w3-padding w3-card-4 w3-round-large">이름 : ' + jennie['메일'] + '</h3>');
+        document.write('    <h3 class="w3-blue w3-padding w3-card-4 w3-round-large">이름 : ' + jennie['전화'] + '</h3>');
+        document.write('</div>');
+        document.write('<hr>');
+
+        var blackPink = [
+        {
+            '이름': '제니',
+            '나이': 28,
+            '메일': 'jennie@human.com',
+            '전화': '010-1212-1212'
+        },
+        {
+            '이름': '리사',
+            '나이': 26,
+            '메일': 'lisa@human.com',
+            '전화': '010-2424-2424'
+        },
+        {
+            '이름': '로제',
+            '나이': 27,
+            '메일': 'rose@human.com',
+            '전화': '010-5454-5454'
+        },
+        {
+            '이름': '지수',
+            '나이': 29,
+            '메일': 'jisoo@human.com',
+            '전화': '010-2626-2626'
+        }
+        ];
+            document.write('        <div class="w3-content mxw650">');
+            document.write('        <h1 class="w3-pale-green w3-padding w3-round-large w3-card-4 w3-center">BlackPink</h1>');
+            document.write('        <div class="w3-col w3-padding w3-center">');
+        for(var i = 0 ; i< blackPink.length; i++){
+            document.write('            <div class="inblock w3-padding w3-card-4 w3-round-large w3-black" style="width: 280px">');
+            document.write('                <div class="w3-col w3">');
+            document.write('                    <h6 class="w3-col m4 w3-right-align pdr10 w3-pink">이름 : </h6>');
+            document.write('                    <h6 class="w3-col m7 w3-pink">' + blackPink[i].이름 + '</h6>');
+            document.write('                </div>');
+            document.write('                <div class="w3-col">');
+            document.write('                    <h6 class="w3-col m4 w3-right-align pdr10 w3-pink">나이 : </h6>');
+            document.write('                    <h6 class="w3-col m7 w3-pink">' + blackPink[i]['나이'] + '</h6>');
+            document.write('                </div>');
+            document.write('                <div class="w3-col">');
+            document.write('                    <h6 class="w3-col m4 w3-right-align pdr10 w3-pink">메일 : </h6>');
+            document.write('                    <h6 class="w3-col m7 w3-pink">' + blackPink[i]['메일'] + '</h6>');
+            document.write('                </div>');
+            document.write('                <div class="w3-col">');
+            document.write('                    <h6 class="w3-col m4 w3-right-align pdr10 w3-pink">전화 : </h6>');
+            document.write('                    <h6 class="w3-col m7 w3-pink">' + blackPink[i]['전화'] + '</h6>');
+            document.write('                </div>');
+            document.write('            </div>');
+        }
+        document.write('        </div>');
+        document.write('    </div>');
+        /*
+        function func1(){}
+        var func1 = function(){};
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
