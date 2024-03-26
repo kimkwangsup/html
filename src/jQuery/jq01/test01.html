@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <script type="text/javascript" src="../../../js/colorClass.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        /*
+        1. 
+        jQuery 는 함수들로 구성된 자바스크립트 라이브러리이다.
+        jQuery 역시 함수이다.
+
+        jQuery(document).ready(function(){
+            // 이 함수는 body 태그가 완성이 된 후 실행되는 함수이다.
+            // onload 된 이후에 실행되는 함수...
+
+            alert('첫 번째 메세지');
+        });
+        */
+
+        // jQuery 는 내부적으로 $라는 별칭을 만들어서 사용하도록 되어있다.
+        2. 
+        $(document).ready(function(){
+            alert('첫번째 메세지');
+        });
+        
+
+        // jQuery() 함수를 호출할 때 함수를 입력해주면 jQuery 객체를 반환해준다.
+        // 이 때 onload 처리가 되기 때문에 다음 형식으로 위의 형식들을 대신해서 사용할 수 있다.
+        /*
+        3. 
+        $(function(){
+            alert("첫번째 메세지");
+        });
+        */
+        /*
+            jQuery 를 사용할 때는 
+            태그를 조작할 목적으로 사용할 것이므로
+            문서(html)가 완성이 된 후 실행되어야 하는 것이 원칙이다.
+            따라서 
+                jQuery(document).ready(function(){}); 
+                함수가 실행된 이후 실행되어야 한다.
+            결론적으로 jQuery 의 코드는 위 함수의 매개변수로 입력되는 무명함수(function(){})에서
+            작성되어야 할 것이다.
+
+            위 세 가지 형식을 모두 사용할 수 있지만
+            기본적으로 jQuery 를 $로 별칭을 만들어 뒀으므로
+                $(document).ready(function(){
+                    코드 작성..
+                });
+
+            의 형식을 주로 사용한다.
+        */
+
+        $(document).ready(function(){
+            // jQuery를 작성할 때는 이 부분에서 코드를 작성하면 된다.
+            /*
+                함수 사용 형식 ]
+
+                    $('선택자' 또는 자바스크립트 객체)
+            */
+            // 아이디로 mainFr 태그 선택
+            var txt = $('#mainFr').html();
+            /*
+                html() : 일반 태그의 내용을 읽는 함수 - innerHTML 과 같은 기능
+                html('내용') : 일반 태그의 내용을 입력하는 함수.
+
+                참고 ]
+                    val() : 입력태그의 내용을 읽는 함수
+                    val('내용') : 입력태그의 내용을 입력하는 함수.
+            */
+           alert(txt);
+
+            // 읽은 내용을 body 태그 맨 아래쪽에 추가해보자.
+            // append = 맨 아래쪽
+            // prepend = 맨 위쪽
+            $('body > #fr').append(txt);
+         });
+    </script>
+</head>
+<body>
+    <div class="w3-content mxw650 w3-center " id="mainFr">
+        <h1 class="w3-pale-blue w3-padding w3-card-4 w3-round-large">jQuery 01</h1>
+        <form method="POST" action="result.html" name="frm" id="frm" 
+                class="w3-col w3-light-grey mgt20 w3-card-4 w3-padding pdh30">
+            <div class="w3-col w3-padding">
+                <label for="name" class="w3-col m3 lbl w3-text-gray w3-right-align">이 름 : </label>
+                <input type="text" name="name" id="name" 
+                        placeholder="이름을 입력하세요."
+                        class="w3-col m8 w3-input w3-border">
+            </div>
+            <div class="w3-col w3-padding">
+                <label for="id" class="w3-col m3 lbl w3-text-gray w3-right-align">아이디 : </label>
+                <div class="w3-col m8">
+                    <input type="text" name="id" id="id" 
+                            placeholder="아이디를 입력하세요."
+                            class="w3-col m9 w3-input w3-border">
+                    <div class="w3-button w3-blue w3-right" id="chkBtn">check</div>
+                    <small class="w3-col s9 w3-hide" id="idmsg">* 사용가능한 아이디입니다.</small>
+                </div>
+            </div>
+            <div class="w3-col w3-padding">
+                <label for="pw" class="w3-col m3 lbl w3-text-gray w3-right-align">비밀번호 : </label>
+                <div class="w3-col m8">
+                    <input type="password" name="pw" id="pw" 
+                            placeholder="비밀번호를 입력하세요."
+                            class="w3-col w3-input w3-border">
+                    <small class="w3-col w3-hide" id="pwmsg"># 형식이 맞지 않습니다.</small>
+                </div>
+            </div>
+            <div class="w3-col w3-padding">
+                <label for="repw" class="w3-col m3 lbl w3-text-gray w3-right-align">비밀번호확인 : </label>
+                <div class="w3-col m8">
+                    <input type="password" id="repw" 
+                            placeholder="비밀번호 확인 입력!"
+                            class="w3-col w3-input w3-border">
+                    <small class="w3-col w3-hide" id="repwmsg"># 비밀번호가 일치하지 않습니다.</small>
+                </div>
+            </div>
+            <div class="w3-col w3-padding">
+                <label for="mail" class="w3-col m3 lbl w3-text-gray w3-right-align">이메일 : </label>
+                <input type="text" name="mail" id="mail" 
+                        placeholder="이메일을 입력하세요."
+                        class="w3-col m8 w3-input w3-border">
+            </div>
+            <div class="w3-col w3-padding">
+                <label for="tel" class="w3-col m3 lbl w3-text-gray w3-right-align">전화번호 : </label>
+                <input type="text" name="tel" id="tel" 
+                        placeholder="전화번호를 입력하세요."
+                        class="w3-col m8 w3-input w3-border">
+            </div>
+            <div class="w3-col w3-padding">
+                <label class="w3-col m3 lbl w3-text-gray w3-right-align">성 별 : </label>
+                <div class="w3-col m8">
+                    <div class="w3-half w3-center">
+                        <input type="radio" name="gen" id="F" value="F" class="w3-radio rdo" style="position: relative; top: 10px;">
+                        <label for="F" class="genlbl w3-text-gray">여 자</label>
+                    </div>
+                    <div class="w3-half w3-center">
+                        <input type="radio" name="gen" id="M" value="M" class="w3-radio rdo">
+                        <label for="M" class="genlbl w3-text-gray">남 자</label>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col w3-padding" id="avtfr">
+                <label class="w3-col m3 lbl w3-text-gray w3-right-align">아바타 : </label>
+                <div class="w3-col m8">
+                    <div class="w3-col w3-center w3-hide" id="mAvt">
+                        <div class="inblock avtBox w3-center">
+                            <label for="11" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar11.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="11" class="w3-radio avtrdo" value="11">
+                        </div>
+                        <div class="inblock avtBox w3-center">
+                            <label for="12" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar12.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="12" class="w3-radio avtrdo" value="12">
+                        </div>
+                        <div class="inblock avtBox w3-center">
+                            <label for="13" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar13.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="13" class="w3-radio avtrdo" value="13">
+                        </div>
+                    </div>
+                    <div class="w3-col w3-center w3-hide" id="fAvt">
+                        <div class="inblock avtBox w3-center">
+                            <label for="21" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar21.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="21" class="w3-radio avtrdo" value="21">
+                        </div>
+                        <div class="inblock avtBox w3-center">
+                            <label for="22" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar22.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="22" class="w3-radio avtrdo" value="22">
+                        </div>
+                        <div class="inblock avtBox w3-center">
+                            <label for="33" class="inblock imgBox">
+                                <img src="../../../image/avatar/img_avatar23.png" class="avtimg">
+                            </label>
+                            <input type="radio" name="avt" id="23" class="w3-radio avtrdo" value="23">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript">
+            alert('두 번째 메세지');
+        </script>
+        <!-- 버튼태그 -->
+        <div class="w3-col w3-center w3-padding w3-margin-top">
+            <div class="w3-button inblock w3-orange btnW1 w3-card-4 btnPd" id="reset">reset</div>
+            <div class="w3-button inblock w3-green btnW1 w3-card-4 btnPd" id="home">home</div>
+            <div class="w3-button inblock w3-blue btnW1 w3-card-4 btnPd" id="join">회원가입</div>
+        </div>
+    </div>
+    <div class="w3-content mxw600 w3-center mgt20" id="fr"></div>
+</body>
+</html>
